@@ -5,6 +5,7 @@ import createPersistedState from 'vuex-persistedstate'
 import user from './modules/user'
 import products from './modules/products'
 import orders from "./modules/orders";
+import invoices from "./modules/invoices";
 import customers from "./modules/customers";
 Vue.use(Vuex)
 
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     user,
     products,
     orders,
+    invoices,
     customers
   }
 })

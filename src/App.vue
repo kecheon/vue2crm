@@ -111,6 +111,12 @@
           },
           {
             icon: "shopping_cart",
+            title: "Invoices",
+            vertical: "Invoice",
+            link: "invoices"
+          },
+          {
+            icon: "shopping_cart",
             title: "Orders",
             vertical: "Order",
             link: "orders"
