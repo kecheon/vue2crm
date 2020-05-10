@@ -94,16 +94,19 @@ const actions = {
   },
   async getAllInvoices ({ commit }) {
     commit("setLoading", { loading: true })
-    const res = await axios.get(`${API2}/export/`)
-    const invoices = res.data
-    console.log(invoices)
-
+    const res1 = await axios.get(`${API2}/export/`)
+    const invoices = res1.data.data
+    const res2 = await axios.get(`${API2}/export/count`)
+    const totalItems = res2.data
+    commit('setItems', invoices)
+    const pages = Math.ceil(totalItems / 10);
+    commit("setPagination", { totalItems, pages, page: 1, rowsPerPage: 10 });
+    commit("setLoading", { loading: false });
   },
   getAllOrders ({ commit }) {
     commit("setLoading", { loading: true });
     api.getData("orders?_expand=customer").then(res => {
       const orders = res.data;
-
       orders.forEach(item => {
         item.amount = item.products.reduce(( p, c ) => p + ((c && c.unitPrice) || 0), 0);
         item.quantity = item.products.length;

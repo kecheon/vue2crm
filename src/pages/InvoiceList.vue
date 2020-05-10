@@ -3,24 +3,25 @@
     <v-flex xs12>
       <v-card>
       <v-card-title>
-            <span class="title">Orders {{pagination? "("+pagination.totalItems+")": ""}}
-              <v-text-field append-icon="search" label="Quick Search" single-line hide-details v-model="quickSearch"></v-text-field>
+            <span class="title">Invoices {{pagination? "("+pagination.totalItems+")": ""}}
+              <v-text-field append-icon="search" label="Quick Search" single-line hide-details v-model="quickSearch">
+              </v-text-field>
             </span>
             <v-spacer></v-spacer>
             <v-btn class="blue-grey" fab small dark @click.native.stop="rightDrawer = !rightDrawer">
               <v-icon>search</v-icon>
-            </v-btn>            
+            </v-btn>
             <v-btn class="brown lighten-1" fab small dark @click.native="reloadData()">
               <v-icon>refresh</v-icon>
-            </v-btn>            
+            </v-btn>
             <v-btn class="teal darken-2" fab small dark @click.native="print()">
               <v-icon>print</v-icon>
-            </v-btn>            
+            </v-btn>
             <v-btn class="deep-orange darken-3" fab small dark @click.native="add">
               <v-icon>add</v-icon>
             </v-btn>
           </v-card-title>
-        <Table v-if="loading===false" :headers="headers" :items="items"  :pagination="pagination" @edit="edit" @remove="remove"></Table>
+        <Table v-if="loading===false" :headers="headers" :items="items" :pagination="pagination" @edit="edit" @remove="remove"></Table>
       </v-card>
     </v-flex>
     <search-panel :rightDrawer="rightDrawer" @cancelSearch="cancelSearch" @searchData="searchOrders">
@@ -87,15 +88,15 @@ export default {
       search: '',
       headers: [
         {
-          text: 'Reference',
+          text: 'KEY VALUE',
           left: true,
-          value: 'reference'
+          value: 'KEY_VALUE'
         },
-        { text: 'Order Items', value: 'quantity' },
-        { text: 'Amount', value: 'amount' },
-        { text: 'Customer', value: 'customer' },
-        { text: 'Order Date', value: 'orderDate' },
-        { text: 'Shipping Date', value: 'shippedDate' }
+        { text: '신고번호', value: '신고번호' },
+        { text: '란번호', value: '란번호' },
+        { text: '수리일자', value: '수리일자' },
+        { text: '자재코드', value: '자재코드' },
+        { text: '관세액', value: '관세액' }
       ],
       searchVm: {
         contains: {
