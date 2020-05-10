@@ -22,7 +22,7 @@ const state = {
   mode: "",
   snackbar: false,
   notice: "",
-  order: new Invoice(),
+  invoice: new Invoice(),
   customer: "",
   products: [],
   customers: [],
