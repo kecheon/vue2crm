@@ -98,23 +98,23 @@
             vertical: "Invoice",
             link: "invoices"
           },
+          // {
+          //   icon: "shopping_cart",
+          //   title: "Orders",
+          //   vertical: "Order",
+          //   link: "orders"
+          // },
           {
-            icon: "shopping_cart",
-            title: "Orders",
-            vertical: "Order",
-            link: "orders"
+            icon: "bubble_chart",
+            title: "Products",
+            vertical: "Product",
+            link: "products"
           },
           {
             icon: "perm_identity",
             title: "Customers",
             vertical: "Customer",
             link: "customers"
-          },
-          {
-            icon: "bubble_chart",
-            title: "Products",
-            vertical: "Product",
-            link: "products"
           },
           {
             icon: "thumbs_up_down",

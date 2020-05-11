@@ -94,9 +94,9 @@ const actions = {
   },
   async getAllInvoices ({ commit }) {
     commit("setLoading", { loading: true })
-    const res1 = await axios.get(`${API2}/export/`)
+    const res1 = await axios.get(`${API}/export/`)
     const invoices = res1.data.data
-    const res2 = await axios.get(`${API2}/export/count`)
+    const res2 = await axios.get(`${API}/export/count`)
     const totalItems = res2.data
     commit('setItems', invoices)
     const pages = Math.ceil(totalItems / 10);
